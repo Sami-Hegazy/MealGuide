@@ -8,17 +8,19 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
+      scrollDirection: Axis.horizontal,
       padding: const EdgeInsets.all(14),
       children: dummyCategories.map((value) {
         return CategoryItem(
           id: value.id,
           title: value.title,
           color: value.color,
+          imgUrl: '',
         );
       }).toList(),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        childAspectRatio: 3 / 2,
+        childAspectRatio: 3 / 2.3,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
       ),

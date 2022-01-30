@@ -5,11 +5,14 @@ class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
   final Color color;
+  final String imgUrl;
+
   const CategoryItem({
     Key? key,
     required this.title,
     required this.color,
     required this.id,
+    required this.imgUrl,
   }) : super(key: key);
 
   void _selectCategory(context) {
@@ -29,7 +32,10 @@ class CategoryItem extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: Text(
           title,
-          style: Theme.of(context).textTheme.headline6?.copyWith(fontSize: 16),
+          style: Theme.of(context)
+              .textTheme
+              .headline6
+              ?.copyWith(fontSize: 16, fontWeight: FontWeight.bold),
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
